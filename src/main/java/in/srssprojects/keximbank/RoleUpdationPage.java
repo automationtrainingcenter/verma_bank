@@ -36,6 +36,11 @@ public class RoleUpdationPage {
 	// cancel button
 	@FindBy(how = How.ID, using = "Btncancel")
 	private WebElement cancel;
+	
+	public RoleUpdationPage(WebDriver driver){
+		this.driver = driver;
+		PageFactory.initElements(driver, this);
+	}
 
 	// fill roleName
 	public void setRoleName(String roleName) {
