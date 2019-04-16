@@ -82,22 +82,22 @@ public class BranchUpdationPage {
 
 	// fill address2
 	public void setAddress2(String address2) {
-		this.address1().sendKeys(address2);
+		this.address2().sendKeys(address2);
 	}
 
 	// fill address3
 	public void setAddress3(String address3) {
-		this.address1().sendKeys(address3);
+		this.address3().sendKeys(address3);
 	}
 
 	// fill area
 	public void setArea(String area) {
-		this.address1().sendKeys(area);
+		this.area().sendKeys(area);
 	}
 
 	// fill zipcode
 	public void setZipcode(String zipcode) {
-		this.address1().sendKeys(zipcode);
+		this.zipCode().sendKeys(zipcode);
 	}
 
 	// choose country from the drop down list

@@ -16,27 +16,27 @@ public class EmployeeUpdationPage {
 	private WebDriver driver;
 
 	// Employee Name
-	@FindBy(how = How.ID, using = "")
+	@FindBy(how = How.ID, using = "txtBnameU")
 	private WebElement empName;
 
 	// Login Password
-	@FindBy(how = How.ID, using = "")
+	@FindBy(how = How.ID, using = "txtPwdU")
 	private WebElement logPass;
 
 	// role
-	@FindBy(how = How.ID, using = "")
+	@FindBy(how = How.ID, using = "lstrolesU")
 	private WebElement role;
 
 	// branch
-	@FindBy(how = How.ID, using = "")
+	@FindBy(how = How.ID, using = "lstBidU")
 	private WebElement branch;
 
 	// update button
-	@FindBy(how = How.ID, using = "")
+	@FindBy(how = How.ID, using = "BtnUpdate")
 	private WebElement updateButton;
 
 	// CancelButton
-	@FindBy(how = How.ID, using = "")
+	@FindBy(how = How.ID, using = "btncancelU")
 	private WebElement cancelButton;
 
 	public EmployeeUpdationPage(WebDriver driver) {
@@ -69,7 +69,8 @@ public class EmployeeUpdationPage {
 		this.updateButton.click();
 		return driver.switchTo().alert();
 	}
-
+	
+	//click cancel Button
 	public EmployeeDetailsPage cancelButton() {
 		this.cancelButton.click();
 		return PageFactory.initElements(driver, EmployeeDetailsPage.class);
