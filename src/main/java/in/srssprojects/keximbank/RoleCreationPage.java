@@ -15,19 +15,19 @@ public class RoleCreationPage {
 	@FindBy(how = How.ID, using = "txtRname")
 	private WebElement roleName;
 
-	// role name
+	// role type
 	@FindBy(how = How.ID, using = "lstRtypeN")
 	private WebElement roleType;
 
-	// role name
+	// role submit
 	@FindBy(how = How.ID, using = "btninsert")
 	private WebElement submit;
 
-	// role name
+	// role resetButton
 	@FindBy(how = How.ID, using = "Btn_Reset")
 	private WebElement reset;
 
-	// role name
+	// role Cancel Button
 	@FindBy(how = How.ID, using = "Btn_cancel")
 	private WebElement cancel;
 
@@ -48,7 +48,7 @@ public class RoleCreationPage {
 
 	// click submit
 	public Alert clickSubmit() {
-		this.submit.click();
+		this.submit.click();	
 		return driver.switchTo().alert();
 	}
 

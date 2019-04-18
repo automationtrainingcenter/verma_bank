@@ -28,6 +28,10 @@ public class AdminHomePage {
 	// roles
 	@FindBy(how = How.CSS, using = "a[href='Admin_Roles_details.aspx']")
 	private WebElement roles;
+	
+	//users
+	@FindBy(how = How.CSS, using = "a[href='userdetails.aspx']")
+	private WebElement users;
 
 	// employee
 	@FindBy(how = How.CSS, using = "a[href='Admin_Emp_details.aspx']")
