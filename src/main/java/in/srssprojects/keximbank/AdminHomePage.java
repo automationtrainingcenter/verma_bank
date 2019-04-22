@@ -28,8 +28,8 @@ public class AdminHomePage {
 	// roles
 	@FindBy(how = How.CSS, using = "a[href='Admin_Roles_details.aspx']")
 	private WebElement roles;
-	
-	//users
+
+	// users
 	@FindBy(how = How.CSS, using = "a[href='userdetails.aspx']")
 	private WebElement users;
 
@@ -70,6 +70,16 @@ public class AdminHomePage {
 	public BankHomePage clickLogout() {
 		this.logout.click();
 		return PageFactory.initElements(driver, BankHomePage.class);
+	}
+
+	// verfiy admin home page is displayed or not
+	public boolean isAdminHomePageDispalyed() {
+//		if (driver.getCurrentUrl().contains("adminflow") && this.logout.isDisplayed()) {
+//			return true;
+//		} else {
+//			return false;
+//		}
+		return (driver.getCurrentUrl().contains("adminflow") && this.logout.isDisplayed()) ? true : false;
 	}
 
 }

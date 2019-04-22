@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="15968" started-at="2019-04-22T02:41:08Z" finished-at="2019-04-22T02:41:24Z">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="15968" started-at="2019-04-22T02:41:08Z" finished-at="2019-04-22T02:41:24Z">
+      <class name="in.srssprojects.keximbank.BasicExecution">
+        <test-method status="PASS" signature="browserLaunch()[pri:0, instance:in.srssprojects.keximbank.BasicExecution@26653222]" name="browserLaunch" is-config="true" duration-ms="12582" started-at="2019-04-22T02:41:08Z" finished-at="2019-04-22T02:41:21Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserLaunch -->
+        <test-method status="PASS" signature="login()[pri:0, instance:in.srssprojects.keximbank.BasicExecution@26653222]" name="login" duration-ms="3129" started-at="2019-04-22T02:41:21Z" finished-at="2019-04-22T02:41:24Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:in.srssprojects.keximbank.BasicExecution@26653222]" name="tearDown" is-config="true" duration-ms="203" started-at="2019-04-22T02:41:24Z" finished-at="2019-04-22T02:41:24Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- in.srssprojects.keximbank.BasicExecution -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
