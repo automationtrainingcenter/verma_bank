@@ -1,6 +1,7 @@
 package in.srssprojects.keximbank;
 
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -61,5 +62,12 @@ public class RoleCreationPage {
 	public RoleDetailsPage clickCancel() {
 		this.cancel.click();
 		return PageFactory.initElements(driver, RoleDetailsPage.class);
+	}
+	
+	
+	//validate role creation form reset
+	public boolean isFormReset() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		return js.executeScript("return arguments[0].value", this.roleName).toString().isEmpty();
 	}
 }

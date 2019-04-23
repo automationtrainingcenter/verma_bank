@@ -2,6 +2,7 @@ package in.srssprojects.keximbank;
 
 
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -17,6 +18,7 @@ import org.openqa.selenium.support.ui.Select;
 public class BranchCreationPage {
 
 	private WebDriver driver;
+	
 
 	// Branhc name
 	@FindBy(how = How.ID, using = "txtbName")
@@ -104,7 +106,8 @@ public class BranchCreationPage {
 
 	// select Country
 	public void setCountry(String countryName) {
-		new Select(this.country).selectByVisibleText(countryName);
+		Select country = new Select(this.country);
+		country.selectByVisibleText(countryName);
 	}
 
 	// select State
@@ -132,6 +135,14 @@ public class BranchCreationPage {
 	public BranchDetailsPage cancelButton() {
 		this.cancel.click();
 		return PageFactory.initElements(driver, BranchDetailsPage.class);
-
+	}
+	
+	//validate branch creation form is reset or not
+	public boolean isFormReset() {
+		//get first selected option
+		String firstSelectedCountry = new Select(this.country).getFirstSelectedOption().getText();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		String text = js.executeScript("return arguments[0].value", this.branchName).toString();
+		return (firstSelectedCountry.equals("Select") && text.isEmpty());
 	}
 }
