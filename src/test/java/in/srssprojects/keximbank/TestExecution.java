@@ -15,7 +15,10 @@ public class TestExecution extends BrowserHelper {
 	BranchDetailsPage branchDetailsPage;
 	BranchCreationPage branchCreationPage;
 	RoleDetailsPage roleDetailsPage;
-	private RoleCreationPage roleCreationPage;
+	RoleCreationPage roleCreationPage;
+	EmployeeDetailsPage employeeDetailsPage;
+	EmployeeCreaionPage employeeCreaionPage;
+	Alert alert;
 
 	@Test(priority = 0)
 	public void login() {
@@ -37,7 +40,7 @@ public class TestExecution extends BrowserHelper {
 		branchCreationPage.setCountry(TestData.country);
 		branchCreationPage.setState(TestData.state);
 		branchCreationPage.setCity(TestData.city);
-		Alert alert = branchCreationPage.submitButton();
+		alert = branchCreationPage.submitButton();
 		alertText = alert.getText();
 		Assert.assertTrue(alertText.contains("created Sucessfully"));
 	}
@@ -52,7 +55,7 @@ public class TestExecution extends BrowserHelper {
 		branchCreationPage.setCountry(TestData.country);
 		branchCreationPage.setState(TestData.state);
 		branchCreationPage.setCity(TestData.city);
-		Alert alert = branchCreationPage.submitButton();
+		alert = branchCreationPage.submitButton();
 		alertText = alert.getText();
 		Assert.assertTrue(alertText.contains("Branch name already Exist"));
 	}
@@ -61,7 +64,7 @@ public class TestExecution extends BrowserHelper {
 	public void branchCreationWithBlankData() {
 		branchDetailsPage = adminHomePage.clickBranches();
 		branchCreationPage = branchDetailsPage.clickNewBranch();
-		Alert alert = branchCreationPage.submitButton();
+		alert = branchCreationPage.submitButton();
 		alertText = alert.getText();
 		Assert.assertTrue(alertText.contains("fill in the following"));
 	}
@@ -95,7 +98,7 @@ public class TestExecution extends BrowserHelper {
 		roleCreationPage = roleDetailsPage.clickNewRole();
 		roleCreationPage.setRoleName(TestData.roleName);
 		roleCreationPage.selectRoleType(TestData.roleType);
-		Alert alert = roleCreationPage.clickSubmit();
+		alert = roleCreationPage.clickSubmit();
 		Assert.assertTrue(alert.getText().toLowerCase().contains("created sucessfully"));
 	}
 	
@@ -105,7 +108,7 @@ public class TestExecution extends BrowserHelper {
 		roleCreationPage = roleDetailsPage.clickNewRole();
 		roleCreationPage.setRoleName(TestData.roleName);
 		roleCreationPage.selectRoleType(TestData.roleType);
-		Alert alert = roleCreationPage.clickSubmit();
+		alert = roleCreationPage.clickSubmit();
 		Assert.assertTrue(alert.getText().toLowerCase().contains("role already existed"));
 	}
 	
@@ -113,7 +116,7 @@ public class TestExecution extends BrowserHelper {
 	public void roleCreationWithBlankDate() {
 		roleDetailsPage = adminHomePage.clickRoles();
 		roleCreationPage = roleDetailsPage.clickNewRole();
-		Alert alert = roleCreationPage.clickSubmit();
+		alert = roleCreationPage.clickSubmit();
 		Assert.assertTrue(alert.getText().toLowerCase().contains("fill in the following"));
 	}
 	
@@ -134,5 +137,55 @@ public class TestExecution extends BrowserHelper {
 		roleDetailsPage = roleCreationPage.clickCancel();
 		Assert.assertTrue(roleDetailsPage.isNewRoleDisplayed());
 	}
-
+	
+	@Test(priority = 11)
+	public void employeeCreationWithValidData() {
+		employeeDetailsPage = adminHomePage.clickEmployee();
+		employeeCreaionPage = employeeDetailsPage.clickNewEmployee();
+		employeeCreaionPage.setEmployeeName(TestData.empName);
+		employeeCreaionPage.setPasswd(TestData.passwd);
+		employeeCreaionPage.setBranch(TestData.branchName);
+		employeeCreaionPage.setRole(TestData.roleType);
+		alert = employeeCreaionPage.clickSubmit();
+		Assert.assertTrue(alert.getText().toLowerCase().contains("New Employer Created"));
+	}
+	
+	@Test(priority = 12)
+	public void employeeCreationWIthDuplicateData() {
+		employeeDetailsPage = adminHomePage.clickEmployee();
+		employeeCreaionPage = employeeDetailsPage.clickNewEmployee();
+		employeeCreaionPage.setEmployeeName(TestData.empName);
+		employeeCreaionPage.setPasswd(TestData.passwd);
+		employeeCreaionPage.setBranch(TestData.branchName);
+		employeeCreaionPage.setRole(TestData.roleType);
+		alert = employeeCreaionPage.clickSubmit();
+		Assert.assertTrue(alert.getText().toLowerCase().contains("Employee already existed"));
+	}
+	
+	@Test(priority = 13)
+	public void employeeCreationWithBlandkData() {
+		employeeDetailsPage = adminHomePage.clickEmployee();
+		employeeCreaionPage = employeeDetailsPage.clickNewEmployee();
+		alert = employeeCreaionPage.clickSubmit();
+		Assert.assertTrue(alert.getText().toLowerCase().contains("fill in the following"));
+	}
+	
+	@Test(priority = 14)
+	public void employeeCreationReset() {
+		employeeDetailsPage = adminHomePage.clickEmployee();
+		employeeCreaionPage = employeeDetailsPage.clickNewEmployee();
+		employeeCreaionPage.setEmployeeName(TestData.empName);
+		employeeCreaionPage.setPasswd(TestData.passwd);
+		employeeCreaionPage.setBranch(TestData.branchName);
+		employeeCreaionPage.clickReset();
+		Assert.assertTrue(employeeCreaionPage.isEmployeeReset());
+	}
+	
+	@Test(priority =15)
+	public void employeCreationCancel(){
+		employeeDetailsPage = adminHomePage.clickEmployee();
+		employeeCreaionPage = employeeDetailsPage.clickNewEmployee();
+		employeeDetailsPage = employeeCreaionPage.clickCancel();
+		Assert.assertTrue(employeeDetailsPage.isNewEmployeeDisplayed());
+	}
 }

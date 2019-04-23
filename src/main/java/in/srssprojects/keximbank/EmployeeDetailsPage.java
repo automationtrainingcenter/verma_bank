@@ -27,4 +27,8 @@ public class EmployeeDetailsPage {
 		this.newEmp.click();
 		return PageFactory.initElements(driver, EmployeeCreaionPage.class);
 	}
+	
+	public boolean isNewEmployeeDisplayed() {
+		return this.newEmp.isDisplayed();
+	}
 }

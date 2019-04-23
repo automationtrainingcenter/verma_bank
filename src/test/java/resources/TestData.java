@@ -10,5 +10,7 @@ public class TestData {
 	public static String city = "GOA";
 	public static String roleName = "puneOne";
 	public static String roleType = "E";
+	public static String empName = "Suraj";
+	public static String passwd = "Suraj1234";
 
 }
