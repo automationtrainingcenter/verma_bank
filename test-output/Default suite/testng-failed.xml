@@ -5,9 +5,23 @@
     <classes>
       <class name="in.srssprojects.keximbank.BasicExecution">
         <methods>
-          <include name="tearDown"/>
-          <include name="login"/>
+          <include name="employeeCreationWIthDuplicateData"/>
+          <include name="roleCreationReset"/>
+          <include name="employeCreationCancel"/>
+          <include name="branchCreationCancel"/>
           <include name="browserLaunch"/>
+          <include name="branchCreationReset"/>
+          <include name="employeeCreationReset"/>
+          <include name="employeeCreationWithValidData"/>
+          <include name="roleCreationWithBlankDate"/>
+          <include name="tearDown"/>
+          <include name="employeeCreationWithBlandkData"/>
+          <include name="roleCreationCancel"/>
+          <include name="branchCreationWithValidData"/>
+          <include name="roleCreationWithDuplicateDate"/>
+          <include name="branchCreationWithBlankData"/>
+          <include name="branchCreationWithDuplicateData"/>
+          <include name="roleCreationWithValidDate"/>
         </methods>
       </class> <!-- in.srssprojects.keximbank.BasicExecution -->
     </classes>

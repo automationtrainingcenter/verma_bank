@@ -41,8 +41,9 @@ public class EmployeeCreaionPage {
 	private WebElement cancel;
 
 	// Constructor
-	public void EmployeeCreation(WebDriver driver) {
+	public EmployeeCreaionPage(WebDriver driver) {
 		this.driver = driver;
+		PageFactory.initElements(driver, this);
 	}
 
 	// fill Employee Name

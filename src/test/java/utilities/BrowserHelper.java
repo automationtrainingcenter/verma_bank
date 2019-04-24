@@ -24,6 +24,7 @@ public class BrowserHelper extends GenericHelper{
 		}
 		driver.get(url);
 		driver.manage().window().maximize();
+		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}
 
 	public void closeBrowser() {

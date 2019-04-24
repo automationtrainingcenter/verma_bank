@@ -2,7 +2,7 @@ package resources;
 
 public class TestData {
 	
-	public static String branchName = "hudaBranchOne";
+	public static String branchName = "hudaBranchTne";
 	public static String address1 = "huda colony";
 	public static String zipcode = "54321";
 	public static String country = "INDIA";
