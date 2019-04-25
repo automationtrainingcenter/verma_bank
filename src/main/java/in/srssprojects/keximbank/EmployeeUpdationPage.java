@@ -1,6 +1,5 @@
 package in.srssprojects.keximbank;
 
-
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -70,8 +69,8 @@ public class EmployeeUpdationPage {
 		this.updateButton.click();
 		return driver.switchTo().alert();
 	}
-	
-	//click cancel Button
+
+	// click cancel Button
 	public EmployeeDetailsPage cancelButton() {
 		this.cancelButton.click();
 		return PageFactory.initElements(driver, EmployeeDetailsPage.class);

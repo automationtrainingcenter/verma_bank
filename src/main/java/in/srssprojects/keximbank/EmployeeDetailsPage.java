@@ -1,12 +1,10 @@
 package in.srssprojects.keximbank;
 
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
-
 
 public class EmployeeDetailsPage {
 
@@ -27,7 +25,7 @@ public class EmployeeDetailsPage {
 		this.newEmp.click();
 		return PageFactory.initElements(driver, EmployeeCreaionPage.class);
 	}
-	
+
 	public boolean isNewEmployeeDisplayed() {
 		return this.newEmp.isDisplayed();
 	}

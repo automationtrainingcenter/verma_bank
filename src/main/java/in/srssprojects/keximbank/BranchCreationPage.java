@@ -1,6 +1,5 @@
 package in.srssprojects.keximbank;
 
-
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -18,7 +17,6 @@ import org.openqa.selenium.support.ui.Select;
 public class BranchCreationPage {
 
 	private WebDriver driver;
-	
 
 	// Branhc name
 	@FindBy(how = How.ID, using = "txtbName")
@@ -125,8 +123,8 @@ public class BranchCreationPage {
 		this.submit.click();
 		return driver.switchTo().alert();
 	}
-	
-	//reset button 
+
+	// reset button
 	public void resetButton() {
 		this.reset.click();
 	}
@@ -136,10 +134,10 @@ public class BranchCreationPage {
 		this.cancel.click();
 		return PageFactory.initElements(driver, BranchDetailsPage.class);
 	}
-	
-	//validate branch creation form is reset or not
+
+	// validate branch creation form is reset or not
 	public boolean isFormReset() {
-		//get first selected option
+		// get first selected option
 		String firstSelectedCountry = new Select(this.country).getFirstSelectedOption().getText();
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		String text = js.executeScript("return arguments[0].value", this.branchName).toString();

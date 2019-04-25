@@ -67,7 +67,7 @@ public class BranchUpdationPage {
 
 	public BranchUpdationPage(WebDriver driver) {
 		this.driver = driver;
-		PageFactory.initElements(driver,this);
+		PageFactory.initElements(driver, this);
 	}
 
 	// fill Branch name

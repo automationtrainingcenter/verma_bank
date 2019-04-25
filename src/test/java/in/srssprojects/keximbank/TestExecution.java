@@ -3,6 +3,7 @@ package in.srssprojects.keximbank;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
+import org.testng.Reporter;
 import org.testng.annotations.Test;
 
 import resources.TestData;
@@ -30,7 +31,7 @@ public class TestExecution extends BrowserHelper {
 		Assert.assertTrue(adminHomePage.isAdminHomePageDispalyed());
 	}
 
-	@Test(priority = 1, groups= {"branch", "create"})
+	@Test(priority = 1, groups = { "branch", "create" })
 	public void branchCreationWithValidData() {
 		branchDetailsPage = adminHomePage.clickBranches();
 		branchCreationPage = branchDetailsPage.clickNewBranch();
@@ -45,8 +46,8 @@ public class TestExecution extends BrowserHelper {
 		alert.accept();
 		Assert.assertTrue(alertText.contains("created Sucessfully"));
 	}
-	
-	@Test(priority = 2, dependsOnMethods= {"branchCreationWithValidData"}, groups = {"branch", "create"})
+
+	@Test(priority = 2, dependsOnMethods = { "branchCreationWithValidData" }, groups = { "branch", "create" })
 	public void branchCreationWithDuplicateData() {
 		branchDetailsPage = adminHomePage.clickBranches();
 		branchCreationPage = branchDetailsPage.clickNewBranch();
@@ -61,18 +62,19 @@ public class TestExecution extends BrowserHelper {
 		alert.accept();
 		Assert.assertTrue(alertText.contains("Branch name already Exist"));
 	}
-	
-	@Test(priority = 3, groups= {"branch", "blank"})
+
+	@Test(priority = 3, groups = { "branch", "blank" })
 	public void branchCreationWithBlankData() {
 		branchDetailsPage = adminHomePage.clickBranches();
 		branchCreationPage = branchDetailsPage.clickNewBranch();
 		alert = branchCreationPage.submitButton();
 		alertText = alert.getText();
+		Reporter.log("alert came "+alertText);
 		alert.accept();
 		Assert.assertTrue(alertText.contains("fill in the following"));
 	}
-	
-	@Test(priority = 4, groups= {"branch", "reset"})
+
+	@Test(priority = 4, groups = { "branch", "reset" })
 	public void branchCreationReset() {
 		branchDetailsPage = adminHomePage.clickBranches();
 		branchCreationPage = branchDetailsPage.clickNewBranch();
@@ -85,17 +87,16 @@ public class TestExecution extends BrowserHelper {
 		branchCreationPage.resetButton();
 		Assert.assertTrue(branchCreationPage.isFormReset());
 	}
-	
-	@Test(priority = 5, groups= {"branch", "cancel"})
+
+	@Test(priority = 5, groups = { "branch", "cancel" })
 	public void branchCreationCancel() {
 		branchDetailsPage = adminHomePage.clickBranches();
 		branchCreationPage = branchDetailsPage.clickNewBranch();
 		branchDetailsPage = branchCreationPage.cancelButton();
 		Assert.assertTrue(branchDetailsPage.isNewBranchButtonDisplayed());
 	}
-	
-	
-	@Test(priority = 6, groups= {"role", "create"})
+
+	@Test(priority = 6, groups = { "role", "create" })
 	public void roleCreationWithValidDate() {
 		roleDetailsPage = adminHomePage.clickRoles();
 		roleCreationPage = roleDetailsPage.clickNewRole();
@@ -106,8 +107,8 @@ public class TestExecution extends BrowserHelper {
 		alert.accept();
 		Assert.assertTrue(alertText.toLowerCase().contains("created sucessfully"));
 	}
-	
-	@Test(priority = 7, groups= {"role", "create"})
+
+	@Test(priority = 7, groups = { "role", "create" })
 	public void roleCreationWithDuplicateDate() {
 		roleDetailsPage = adminHomePage.clickRoles();
 		roleCreationPage = roleDetailsPage.clickNewRole();
@@ -118,8 +119,8 @@ public class TestExecution extends BrowserHelper {
 		alert.accept();
 		Assert.assertTrue(alertText.toLowerCase().contains("role already existed"));
 	}
-	
-	@Test(priority = 8, groups= {"role", "blank"})
+
+	@Test(priority = 8, groups = { "role", "blank" })
 	public void roleCreationWithBlankDate() {
 		roleDetailsPage = adminHomePage.clickRoles();
 		roleCreationPage = roleDetailsPage.clickNewRole();
@@ -128,8 +129,8 @@ public class TestExecution extends BrowserHelper {
 		alert.accept();
 		Assert.assertTrue(alertText.toLowerCase().contains("fill in the following"));
 	}
-	
-	@Test(priority = 9, groups= {"role", "reset"})
+
+	@Test(priority = 9, groups = { "role", "reset" })
 	public void roleCreationReset() {
 		roleDetailsPage = adminHomePage.clickRoles();
 		roleCreationPage = roleDetailsPage.clickNewRole();
@@ -138,16 +139,16 @@ public class TestExecution extends BrowserHelper {
 		roleCreationPage.clickReset();
 		Assert.assertTrue(roleCreationPage.isFormReset());
 	}
-	
-	@Test(priority = 10, groups= {"role", "cancel"})
+
+	@Test(priority = 10, groups = { "role", "cancel" })
 	public void roleCreationCancel() {
 		roleDetailsPage = adminHomePage.clickRoles();
 		roleCreationPage = roleDetailsPage.clickNewRole();
 		roleDetailsPage = roleCreationPage.clickCancel();
 		Assert.assertTrue(roleDetailsPage.isNewRoleDisplayed());
 	}
-	
-	@Test(priority = 11, groups= {"employee", "create"})
+
+	@Test(priority = 11, groups = { "employee", "create" })
 	public void employeeCreationWithValidData() {
 		employeeDetailsPage = adminHomePage.clickEmployee();
 		employeeCreaionPage = employeeDetailsPage.clickNewEmployee();
@@ -160,8 +161,8 @@ public class TestExecution extends BrowserHelper {
 		alert.accept();
 		Assert.assertTrue(alertText.toLowerCase().contains("New Employer Created"));
 	}
-	
-	@Test(priority = 12, groups= {"employee", "create"})
+
+	@Test(priority = 12, groups = { "employee", "create" })
 	public void employeeCreationWIthDuplicateData() {
 		employeeDetailsPage = adminHomePage.clickEmployee();
 		employeeCreaionPage = employeeDetailsPage.clickNewEmployee();
@@ -174,8 +175,8 @@ public class TestExecution extends BrowserHelper {
 		alert.accept();
 		Assert.assertTrue(alertText.contains("Employee already existed"));
 	}
-	
-	@Test(priority = 13, groups= {"employee", "blank"})
+
+	@Test(priority = 13, groups = { "employee", "blank" })
 	public void employeeCreationWithBlandkData() {
 		employeeDetailsPage = adminHomePage.clickEmployee();
 		employeeCreaionPage = employeeDetailsPage.clickNewEmployee();
@@ -184,8 +185,8 @@ public class TestExecution extends BrowserHelper {
 		alert.accept();
 		Assert.assertTrue(alertText.toLowerCase().contains("fill in the following"));
 	}
-	
-	@Test(priority = 14,groups= {"employee", "reset"})
+
+	@Test(priority = 14, groups = { "employee", "reset" })
 	public void employeeCreationReset() {
 		employeeDetailsPage = adminHomePage.clickEmployee();
 		employeeCreaionPage = employeeDetailsPage.clickNewEmployee();
@@ -195,9 +196,9 @@ public class TestExecution extends BrowserHelper {
 		employeeCreaionPage.clickReset();
 		Assert.assertTrue(employeeCreaionPage.isEmployeeReset());
 	}
-	
-	@Test(priority =15, groups= {"employee", "cancel"})
-	public void employeCreationCancel(){
+
+	@Test(priority = 15, groups = { "employee", "cancel" })
+	public void employeCreationCancel() {
 		employeeDetailsPage = adminHomePage.clickEmployee();
 		employeeCreaionPage = employeeDetailsPage.clickNewEmployee();
 		employeeDetailsPage = employeeCreaionPage.clickCancel();

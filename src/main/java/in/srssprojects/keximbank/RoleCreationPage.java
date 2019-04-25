@@ -49,7 +49,7 @@ public class RoleCreationPage {
 
 	// click submit
 	public Alert clickSubmit() {
-		this.submit.click();	
+		this.submit.click();
 		return driver.switchTo().alert();
 	}
 
@@ -63,9 +63,8 @@ public class RoleCreationPage {
 		this.cancel.click();
 		return PageFactory.initElements(driver, RoleDetailsPage.class);
 	}
-	
-	
-	//validate role creation form reset
+
+	// validate role creation form reset
 	public boolean isFormReset() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		return js.executeScript("return arguments[0].value", this.roleName).toString().isEmpty();

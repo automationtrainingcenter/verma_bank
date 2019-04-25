@@ -82,8 +82,8 @@ public class EmployeeCreaionPage {
 		this.cancel.click();
 		return PageFactory.initElements(driver, EmployeeDetailsPage.class);
 	}
-	
-	//validate employee creation reset
+
+	// validate employee creation reset
 	public boolean isEmployeeReset() {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		return js.executeScript("return arguments[0].value", this.empName).toString().isEmpty();

@@ -16,17 +16,17 @@ public class GenericHelper {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public static String getFilePath(String folderName, String fileName) {
-		return System.getProperty("user.dir")+File.separator+folderName+File.separator+fileName;
+		return System.getProperty("user.dir") + File.separator + folderName + File.separator + fileName;
 	}
-	
+
 	public static String getDate() {
 		Date dt = new Date();
 		DateFormat df = new SimpleDateFormat("dd_MMM_YY-HH_mm_ss");
 		return df.format(dt);
 	}
-	
+
 	public String readProperty(String propName) {
 		try {
 			FileInputStream fis = new FileInputStream(getFilePath("", "config.properties"));
@@ -38,6 +38,6 @@ public class GenericHelper {
 			e.printStackTrace();
 			return null;
 		}
-		
+
 	}
 }

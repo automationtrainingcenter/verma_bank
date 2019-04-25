@@ -10,7 +10,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
-public class BrowserHelper extends GenericHelper{
+public class BrowserHelper extends GenericHelper {
 
 	public WebDriver driver;
 
@@ -23,7 +23,7 @@ public class BrowserHelper extends GenericHelper{
 			driver = new FirefoxDriver();
 		}
 		driver.get(url);
-		driver.manage().window().maximize();
+//		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	}
 
@@ -34,7 +34,5 @@ public class BrowserHelper extends GenericHelper{
 			driver.close();
 		}
 	}
-	
-	
-	
+
 }

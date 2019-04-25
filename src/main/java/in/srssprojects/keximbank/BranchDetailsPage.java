@@ -72,8 +72,7 @@ public class BranchDetailsPage {
 		this.newBranch.click();
 		return PageFactory.initElements(driver, BranchCreationPage.class);
 	}
-	
-	
+
 	public boolean isNewBranchButtonDisplayed() {
 		return this.newBranch.isDisplayed();
 	}
