@@ -1,82 +1,81 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="0" ignored="9" total="16" passed="7">
+<testng-results skipped="0" failed="0" ignored="12" total="16" passed="4">
   <reporter-output>
   </reporter-output>
-  <suite name="basic suite" duration-ms="28445" started-at="2019-04-24T02:41:08Z" finished-at="2019-04-24T02:41:37Z">
+  <suite name="grid suite" duration-ms="35554" started-at="2019-04-29T02:04:06Z" finished-at="2019-04-29T02:04:41Z">
     <groups>
       <group name="cancel">
-        <method signature="TestExecution.login()[pri:0, instance:in.srssprojects.keximbank.BasicExecution@47c62251]" name="login" class="in.srssprojects.keximbank.TestExecution"/>
+        <method signature="TestExecution.login()[pri:0, instance:in.srssprojects.keximbank.GridExecution@3bfdc050]" name="login" class="in.srssprojects.keximbank.TestExecution"/>
       </group> <!-- cancel -->
-      <group name="blank">
-        <method signature="TestExecution.branchCreationWithBlankData()[pri:3, instance:in.srssprojects.keximbank.BasicExecution@47c62251]" name="branchCreationWithBlankData" class="in.srssprojects.keximbank.TestExecution"/>
-        <method signature="TestExecution.employeeCreationWithBlandkData()[pri:13, instance:in.srssprojects.keximbank.BasicExecution@47c62251]" name="employeeCreationWithBlandkData" class="in.srssprojects.keximbank.TestExecution"/>
-        <method signature="TestExecution.login()[pri:0, instance:in.srssprojects.keximbank.BasicExecution@47c62251]" name="login" class="in.srssprojects.keximbank.TestExecution"/>
-        <method signature="TestExecution.roleCreationWithBlankDate()[pri:8, instance:in.srssprojects.keximbank.BasicExecution@47c62251]" name="roleCreationWithBlankDate" class="in.srssprojects.keximbank.TestExecution"/>
-      </group> <!-- blank -->
       <group name="role">
-        <method signature="TestExecution.login()[pri:0, instance:in.srssprojects.keximbank.BasicExecution@47c62251]" name="login" class="in.srssprojects.keximbank.TestExecution"/>
-        <method signature="TestExecution.roleCreationReset()[pri:9, instance:in.srssprojects.keximbank.BasicExecution@47c62251]" name="roleCreationReset" class="in.srssprojects.keximbank.TestExecution"/>
-        <method signature="TestExecution.roleCreationWithBlankDate()[pri:8, instance:in.srssprojects.keximbank.BasicExecution@47c62251]" name="roleCreationWithBlankDate" class="in.srssprojects.keximbank.TestExecution"/>
+        <method signature="TestExecution.login()[pri:0, instance:in.srssprojects.keximbank.GridExecution@3bfdc050]" name="login" class="in.srssprojects.keximbank.TestExecution"/>
+        <method signature="TestExecution.roleCreationReset()[pri:9, instance:in.srssprojects.keximbank.GridExecution@3bfdc050]" name="roleCreationReset" class="in.srssprojects.keximbank.TestExecution"/>
       </group> <!-- role -->
+      <group name="blank">
+        <method signature="TestExecution.login()[pri:0, instance:in.srssprojects.keximbank.GridExecution@3bfdc050]" name="login" class="in.srssprojects.keximbank.TestExecution"/>
+      </group> <!-- blank -->
       <group name="reset">
-        <method signature="TestExecution.branchCreationReset()[pri:4, instance:in.srssprojects.keximbank.BasicExecution@47c62251]" name="branchCreationReset" class="in.srssprojects.keximbank.TestExecution"/>
-        <method signature="TestExecution.employeeCreationReset()[pri:14, instance:in.srssprojects.keximbank.BasicExecution@47c62251]" name="employeeCreationReset" class="in.srssprojects.keximbank.TestExecution"/>
-        <method signature="TestExecution.login()[pri:0, instance:in.srssprojects.keximbank.BasicExecution@47c62251]" name="login" class="in.srssprojects.keximbank.TestExecution"/>
-        <method signature="TestExecution.roleCreationReset()[pri:9, instance:in.srssprojects.keximbank.BasicExecution@47c62251]" name="roleCreationReset" class="in.srssprojects.keximbank.TestExecution"/>
+        <method signature="TestExecution.branchCreationReset()[pri:4, instance:in.srssprojects.keximbank.GridExecution@3bfdc050]" name="branchCreationReset" class="in.srssprojects.keximbank.TestExecution"/>
+        <method signature="TestExecution.employeeCreationReset()[pri:14, instance:in.srssprojects.keximbank.GridExecution@3bfdc050]" name="employeeCreationReset" class="in.srssprojects.keximbank.TestExecution"/>
+        <method signature="TestExecution.login()[pri:0, instance:in.srssprojects.keximbank.GridExecution@3bfdc050]" name="login" class="in.srssprojects.keximbank.TestExecution"/>
+        <method signature="TestExecution.roleCreationReset()[pri:9, instance:in.srssprojects.keximbank.GridExecution@3bfdc050]" name="roleCreationReset" class="in.srssprojects.keximbank.TestExecution"/>
       </group> <!-- reset -->
       <group name="create">
-        <method signature="TestExecution.login()[pri:0, instance:in.srssprojects.keximbank.BasicExecution@47c62251]" name="login" class="in.srssprojects.keximbank.TestExecution"/>
+        <method signature="TestExecution.login()[pri:0, instance:in.srssprojects.keximbank.GridExecution@3bfdc050]" name="login" class="in.srssprojects.keximbank.TestExecution"/>
       </group> <!-- create -->
       <group name="employee">
-        <method signature="TestExecution.employeeCreationReset()[pri:14, instance:in.srssprojects.keximbank.BasicExecution@47c62251]" name="employeeCreationReset" class="in.srssprojects.keximbank.TestExecution"/>
-        <method signature="TestExecution.employeeCreationWithBlandkData()[pri:13, instance:in.srssprojects.keximbank.BasicExecution@47c62251]" name="employeeCreationWithBlandkData" class="in.srssprojects.keximbank.TestExecution"/>
-        <method signature="TestExecution.login()[pri:0, instance:in.srssprojects.keximbank.BasicExecution@47c62251]" name="login" class="in.srssprojects.keximbank.TestExecution"/>
+        <method signature="TestExecution.employeeCreationReset()[pri:14, instance:in.srssprojects.keximbank.GridExecution@3bfdc050]" name="employeeCreationReset" class="in.srssprojects.keximbank.TestExecution"/>
+        <method signature="TestExecution.login()[pri:0, instance:in.srssprojects.keximbank.GridExecution@3bfdc050]" name="login" class="in.srssprojects.keximbank.TestExecution"/>
       </group> <!-- employee -->
       <group name="branch">
-        <method signature="TestExecution.branchCreationReset()[pri:4, instance:in.srssprojects.keximbank.BasicExecution@47c62251]" name="branchCreationReset" class="in.srssprojects.keximbank.TestExecution"/>
-        <method signature="TestExecution.branchCreationWithBlankData()[pri:3, instance:in.srssprojects.keximbank.BasicExecution@47c62251]" name="branchCreationWithBlankData" class="in.srssprojects.keximbank.TestExecution"/>
-        <method signature="TestExecution.login()[pri:0, instance:in.srssprojects.keximbank.BasicExecution@47c62251]" name="login" class="in.srssprojects.keximbank.TestExecution"/>
+        <method signature="TestExecution.branchCreationReset()[pri:4, instance:in.srssprojects.keximbank.GridExecution@3bfdc050]" name="branchCreationReset" class="in.srssprojects.keximbank.TestExecution"/>
+        <method signature="TestExecution.login()[pri:0, instance:in.srssprojects.keximbank.GridExecution@3bfdc050]" name="login" class="in.srssprojects.keximbank.TestExecution"/>
       </group> <!-- branch -->
     </groups>
-    <test name="basic test" duration-ms="28445" started-at="2019-04-24T02:41:08Z" finished-at="2019-04-24T02:41:37Z">
-      <class name="in.srssprojects.keximbank.BasicExecution">
-        <test-method status="PASS" signature="browserLaunch()[pri:0, instance:in.srssprojects.keximbank.BasicExecution@47c62251]" name="browserLaunch" is-config="true" duration-ms="7565" started-at="2019-04-24T02:41:08Z" finished-at="2019-04-24T02:41:16Z">
+    <test name="node 1" duration-ms="35554" started-at="2019-04-29T02:04:06Z" finished-at="2019-04-29T02:04:41Z">
+      <class name="in.srssprojects.keximbank.GridExecution">
+        <test-method status="PASS" signature="browserLaunch(java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:in.srssprojects.keximbank.GridExecution@3bfdc050]" name="browserLaunch" is-config="true" duration-ms="14716" started-at="2019-04-29T02:04:06Z" finished-at="2019-04-29T02:04:21Z">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[http://srssprojects.in]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[http://192.168.1.23:1498/wd/hub]]>
+              </value>
+            </param>
+          </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- browserLaunch -->
-        <test-method status="PASS" signature="login()[pri:0, instance:in.srssprojects.keximbank.BasicExecution@47c62251]" name="login" duration-ms="2921" started-at="2019-04-24T02:41:16Z" finished-at="2019-04-24T02:41:19Z">
+        <test-method status="PASS" signature="login()[pri:0, instance:in.srssprojects.keximbank.GridExecution@3bfdc050]" name="login" duration-ms="3769" started-at="2019-04-29T02:04:21Z" finished-at="2019-04-29T02:04:24Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method status="PASS" signature="branchCreationWithBlankData()[pri:3, instance:in.srssprojects.keximbank.BasicExecution@47c62251]" name="branchCreationWithBlankData" duration-ms="1750" started-at="2019-04-24T02:41:19Z" finished-at="2019-04-24T02:41:21Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- branchCreationWithBlankData -->
-        <test-method status="PASS" signature="branchCreationReset()[pri:4, instance:in.srssprojects.keximbank.BasicExecution@47c62251]" name="branchCreationReset" duration-ms="3142" started-at="2019-04-24T02:41:21Z" finished-at="2019-04-24T02:41:24Z">
+        <test-method status="PASS" signature="branchCreationReset()[pri:4, instance:in.srssprojects.keximbank.GridExecution@3bfdc050]" name="branchCreationReset" duration-ms="5411" started-at="2019-04-29T02:04:24Z" finished-at="2019-04-29T02:04:30Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- branchCreationReset -->
-        <test-method status="PASS" signature="roleCreationWithBlankDate()[pri:8, instance:in.srssprojects.keximbank.BasicExecution@47c62251]" name="roleCreationWithBlankDate" duration-ms="1624" started-at="2019-04-24T02:41:24Z" finished-at="2019-04-24T02:41:25Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- roleCreationWithBlankDate -->
-        <test-method status="PASS" signature="roleCreationReset()[pri:9, instance:in.srssprojects.keximbank.BasicExecution@47c62251]" name="roleCreationReset" duration-ms="1904" started-at="2019-04-24T02:41:25Z" finished-at="2019-04-24T02:41:27Z">
+        <test-method status="PASS" signature="roleCreationReset()[pri:9, instance:in.srssprojects.keximbank.GridExecution@3bfdc050]" name="roleCreationReset" duration-ms="2414" started-at="2019-04-29T02:04:30Z" finished-at="2019-04-29T02:04:32Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- roleCreationReset -->
-        <test-method status="PASS" signature="employeeCreationWithBlandkData()[pri:13, instance:in.srssprojects.keximbank.BasicExecution@47c62251]" name="employeeCreationWithBlandkData" duration-ms="3493" started-at="2019-04-24T02:41:27Z" finished-at="2019-04-24T02:41:31Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- employeeCreationWithBlandkData -->
-        <test-method status="PASS" signature="employeeCreationReset()[pri:14, instance:in.srssprojects.keximbank.BasicExecution@47c62251]" name="employeeCreationReset" duration-ms="3606" started-at="2019-04-24T02:41:31Z" finished-at="2019-04-24T02:41:34Z">
+        <test-method status="PASS" signature="employeeCreationReset()[pri:14, instance:in.srssprojects.keximbank.GridExecution@3bfdc050]" name="employeeCreationReset" duration-ms="7016" started-at="2019-04-29T02:04:32Z" finished-at="2019-04-29T02:04:39Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- employeeCreationReset -->
-        <test-method status="PASS" signature="tearDown()[pri:0, instance:in.srssprojects.keximbank.BasicExecution@47c62251]" name="tearDown" is-config="true" duration-ms="2383" started-at="2019-04-24T02:41:34Z" finished-at="2019-04-24T02:41:37Z">
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:in.srssprojects.keximbank.GridExecution@3bfdc050]" name="tearDown" is-config="true" duration-ms="2180" started-at="2019-04-29T02:04:39Z" finished-at="2019-04-29T02:04:41Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDown -->
-      </class> <!-- in.srssprojects.keximbank.BasicExecution -->
-    </test> <!-- basic test -->
-  </suite> <!-- basic suite -->
+      </class> <!-- in.srssprojects.keximbank.GridExecution -->
+    </test> <!-- node 1 -->
+  </suite> <!-- grid suite -->
 </testng-results>
