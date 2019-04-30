@@ -8,6 +8,8 @@ import org.testng.annotations.Test;
 
 import resources.TestData;
 import utilities.BrowserHelper;
+import utilities.DataProviderUtility;
+import utilities.ExcelHelper;
 
 public class TestExecution extends BrowserHelper {
 	String alertText;
@@ -69,7 +71,7 @@ public class TestExecution extends BrowserHelper {
 		branchCreationPage = branchDetailsPage.clickNewBranch();
 		alert = branchCreationPage.submitButton();
 		alertText = alert.getText();
-		Reporter.log("alert came "+alertText);
+		Reporter.log("alert came " + alertText);
 		alert.accept();
 		Assert.assertTrue(alertText.contains("fill in the following"));
 	}
@@ -204,4 +206,50 @@ public class TestExecution extends BrowserHelper {
 		employeeDetailsPage = employeeCreaionPage.clickCancel();
 		Assert.assertTrue(employeeDetailsPage.isNewEmployeeDisplayed());
 	}
+
+	@Test(priority = 16, groups = { "dataDriven" })
+	public void roleCreationWithDuplicateWithoutUsingDP() {
+		ExcelHelper excel = new ExcelHelper();
+		excel.setExcel("", "testdata.xls", "roleData");
+		int nor = excel.rowCount();
+		for (int i = 1; i <= nor; i++) {
+			String roleName = excel.readData(i, 0);
+			String roleType = excel.readData(i, 2);
+			roleDetailsPage = adminHomePage.clickRoles();
+			roleCreationPage = roleDetailsPage.clickNewRole();
+			roleCreationPage.setRoleName(roleName);
+			roleCreationPage.selectRoleType(roleType);
+			alert = roleCreationPage.clickSubmit();
+			alertText = alert.getText();
+			alert.accept();
+			Assert.assertTrue(alertText.toLowerCase().contains("role already existed"));
+		}
+	}
+
+	@Test(priority = 17, groups = { "dataDriven" }, dataProviderClass = DataProviderUtility.class, dataProvider="role data")
+	public void roleCreationWithDuplicateUsingDP(String roleName, String roleDesc, String roleType) {
+		roleDetailsPage = adminHomePage.clickRoles();
+		roleCreationPage = roleDetailsPage.clickNewRole();
+		roleCreationPage.setRoleName(roleName);
+		roleCreationPage.selectRoleType(roleType);
+		alert = roleCreationPage.clickSubmit();
+		alertText = alert.getText();
+		alert.accept();
+		Assert.assertTrue(alertText.toLowerCase().contains("role already existed"));
+	}
+	
+	@Test(priority = 18, groups= {"dataDriven"}, dataProviderClass = DataProviderUtility.class, dataProvider = "emp data")
+	public void employeeCreationWithDuplicateDataUsingDP(String empName, String passwd, String roleName, String branchName) {
+		employeeDetailsPage = adminHomePage.clickEmployee();
+		employeeCreaionPage = employeeDetailsPage.clickNewEmployee();
+		employeeCreaionPage.setEmployeeName(empName);
+		employeeCreaionPage.setPasswd(passwd);
+		employeeCreaionPage.setBranch(branchName);
+		employeeCreaionPage.setRole(roleName);
+		alert = employeeCreaionPage.clickSubmit();
+		alertText = alert.getText();
+		alert.accept();
+		Assert.assertTrue(alertText.contains("Employer Already Existed"));
+	}
+
 }

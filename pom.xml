@@ -154,6 +154,23 @@
 				</plugins>
 			</build>
 		</profile>
+		<profile>
+			<id>dataDriven</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-surefire-plugin</artifactId>
+						<version>3.0.0-M3</version>
+						<configuration>
+							<suiteXmlFiles>
+								<suiteXmlFile>dataDriven.xml</suiteXmlFile>
+							</suiteXmlFiles>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
 	</profiles>
 
 	<dependencies>
@@ -176,20 +193,20 @@
 			<version>6.14.3</version>
 			<scope>test</scope>
 		</dependency>
-		
+
 		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
-<dependency>
-    <groupId>org.apache.poi</groupId>
-    <artifactId>poi</artifactId>
-    <version>3.17</version>
-</dependency>
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>3.17</version>
+		</dependency>
 		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
-<dependency>
-    <groupId>org.apache.poi</groupId>
-    <artifactId>poi-ooxml</artifactId>
-    <version>3.17</version>
-</dependency>
-		
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>3.17</version>
+		</dependency>
+
 
 	</dependencies>
 </project>

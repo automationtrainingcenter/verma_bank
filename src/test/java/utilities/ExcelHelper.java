@@ -57,4 +57,27 @@ public class ExcelHelper {
 		return data;
 	}
 
+	public String[][] getExcelData(String folderName, String fileName, String sheetName) {
+		setExcel(folderName, fileName, sheetName);
+		int nor = rowCount();
+		int noc = columnCount();
+		String[][] data = new String[nor][noc];
+		for (int i = 1; i <= nor; i++) {
+			for (int c = 0; c < noc; c++) {
+				data[i-1][c] = readData(i, c);
+			}
+		}
+		return data;
+	}
+
+	public static void main(String[] args) {
+		ExcelHelper excel = new ExcelHelper();
+		String[][] data = excel.getExcelData("", "testdata.xls", "employeeData");
+		for (int i = 0; i < 5; i++) {
+			for (int c = 0; c < 4; c++) {
+				System.out.print(data[i][c] + "\t");
+			}
+			System.out.println();
+		}
+	}
 }
