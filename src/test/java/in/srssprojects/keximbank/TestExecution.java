@@ -4,13 +4,16 @@ import org.openqa.selenium.Alert;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.Reporter;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 import resources.TestData;
 import utilities.BrowserHelper;
 import utilities.DataProviderUtility;
 import utilities.ExcelHelper;
+import utilities.TestNGListener;
 
+@Listeners(TestNGListener.class)
 public class TestExecution extends BrowserHelper {
 	String alertText;
 	BankHomePage bankHomePage;
